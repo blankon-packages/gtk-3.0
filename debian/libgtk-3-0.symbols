@@ -63,6 +63,7 @@ libgdk-3.so.0 libgtk-3-0 #MINVER#
  gdk_device_get_has_cursor@Base 3.0.0
  gdk_device_get_history@Base 3.0.0
  gdk_device_get_key@Base 3.0.0
+ gdk_device_get_last_event_window@Base 3.11.9-0blankon1
  gdk_device_get_mode@Base 3.0.0
  gdk_device_get_n_axes@Base 3.0.0
  gdk_device_get_n_keys@Base 3.0.0
@@ -2695,6 +2696,7 @@ libgtk-3.so.0 libgtk-3-0 #MINVER#
  gtk_plug_new@Base 3.0.0
  gtk_plug_new_for_display@Base 3.0.0
  gtk_policy_type_get_type@Base 3.0.0
+ gtk_popover_accessible_get_type@Base 3.11.9-0blankon1
  gtk_popover_bind_model@Base 3.11.7
  gtk_popover_get_modal@Base 3.11.5
  gtk_popover_get_pointing_to@Base 3.11.5
