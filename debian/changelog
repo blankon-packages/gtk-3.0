@@ -1,8 +1,15 @@
-gtk+3.0 (3.11.9-0blankon1) tambora; urgency=low
+gtk+3.0 (3.12.0-1blankon1) tambora; urgency=low
 
-  * New upstream release unstable version
+  * New upstream release
 
- -- Mahyuddin Idram Ahamd <dotovr@di.blankon.in>  Sat, 22 Mar 2014 20:01:18 +0700
+ -- Mahyuddin Idram Ahmad <dotovr@di.blankon.in>  Wed, 26 Mar 2014 22:30:19 +0700
+
+gtk+3.0 (3.12.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update debian/libgtk-3-0.symbols with added symbols.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Tue, 25 Mar 2014 10:17:09 +0100
 
 gtk+3.0 (3.11.8-1) experimental; urgency=medium
 
