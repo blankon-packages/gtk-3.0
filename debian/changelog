@@ -1,3 +1,9 @@
+gtk+3.0 (3.16.3-2blankon3) tambora; urgency=medium
+
+  * Add script to remove /usr/share/man/man8/update-icon-caches.gtk2.8.gz 
+
+ -- Mahyuddin <yudi.al@gmail.com>  Sun, 31 May 2015 21:20:47 +0700
+
 gtk+3.0 (3.16.3-2blankon2) tambora; urgency=medium
 
   * Add script to remove /usr/sbin/update-icon-caches.gtk2 
