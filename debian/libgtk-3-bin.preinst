@@ -1,6 +1,8 @@
 #!/bin/sh -e
 set -e
 
+rm -f /usr/sbin/update-icon-caches.gtk2
+
 if [ "$1" = install ] || [ "$1" = upgrade ] ; then
     if dpkg-divert --listpackage /usr/sbin/update-icon-caches | grep -q libgtk3.0-bin; then
       dpkg-divert --remove --package libgtk3.0-bin --rename \

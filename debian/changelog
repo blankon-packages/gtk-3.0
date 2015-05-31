@@ -1,3 +1,9 @@
+gtk+3.0 (3.16.3-2blankon2) tambora; urgency=medium
+
+  * Add script to remove /usr/sbin/update-icon-caches.gtk2 
+
+ -- Mahyuddin <yudi.al@gmail.com>  Sun, 31 May 2015 20:01:49 +0700
+
 gtk+3.0 (3.16.3-2blankon1) tambora; urgency=medium
 
   * Merge with Debian Experimental 
