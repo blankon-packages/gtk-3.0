@@ -1,8 +1,221 @@
-gtk+3.0 (3.12.0-1blankon1) tambora; urgency=low
+gtk+3.0 (3.16.3-2blankon1) tambora; urgency=medium
+
+  * Merge with Debian Experimental 
+
+ -- Mahyuddin <yudi.al@gmail.com>  Sun, 31 May 2015 11:55:43 +0700
+
+gtk+3.0 (3.16.3-2) experimental; urgency=medium
+
+  * d/p/015_default-fallback-icon-theme.patch: Replace gnome with Adwaita.
+  * Update libgtk-3-dev dependencies according to its pkg-config file.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 24 May 2015 19:26:07 +0300
+
+gtk+3.0 (3.16.3-1) experimental; urgency=medium
+
+  [ Sjoerd Simons ]
+  * New upstream release 3.16.2.
+  * debian/patches/044_tracker_fts.patch:
+    + Dropped, upstream also defaults to FTS tracker queries now
+  * debian/control: Update build-dependency versions
+  * debian/control: Add libexpoxy and libegl1-mesa-dev to build-depencies
+  * debian/libgtk-3-0.symbols: Updated
+  * d/p/notify-test-Don-t-test-object-relying-on-dbus-connec.patch:
+    + Added. Fix test failure when no session bus is running (bgo#749009)
+  * debian/rules: Add label-text-shadow-changes-modify-clip.ui to known
+    reftest failures
+
+  [ Emilio Pozuelo Monfort ]
+  * New upstream release 3.16.3.
+  * debian/patches:
+    + Refreshed.
+  * debian/patches/notify-test-Don-t-test-object-relying-on-dbus-connec.patch:
+    + Dropped, included upstream.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 22 May 2015 18:23:50 +0200
+
+gtk+3.0 (3.14.5-1) unstable; urgency=medium
+
+  * New upstream bugfix release.
+  * debian/patches/077_fix_menu_height_calculating.patch:
+    + Dropped, merged upstream.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 11 Nov 2014 18:55:46 +0100
+
+gtk+3.0 (3.14.4-2) unstable; urgency=medium
+
+  [ Rico Tzschichholz ]
+  * Install org.gtk.Settings.Debug.gschema.xml
+
+  [ Dmitry Shachnev ]
+  * debian/patches/077_fix_menu_height_calculating.patch: backport upstream
+    commit to fix calculation of menu height (closes: #767906).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 04 Nov 2014 17:19:48 +0300
+
+gtk+3.0 (3.14.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 23 Oct 2014 15:43:31 +0200
+
+gtk+3.0 (3.14.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Install typelib files into multiarch paths.
+  * Mark gir and dev package as Multi-Arch: same.
+  * Bump Standards-Version to 3.9.6. No further changes.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 13 Oct 2014 23:35:40 +0200
+
+gtk+3.0 (3.14.2-1) unstable; urgency=medium
+
+  * New upstream release.
+    - includes fix gtkbuilder fix for problems affecting libgweather
+      users (like gnome-clocks, Closes: #764681)
+
+ -- Andreas Henriksson <andreas@fatal.se>  Sat, 11 Oct 2014 15:12:08 +0200
+
+gtk+3.0 (3.14.1-1) unstable; urgency=medium
+
+  [ Emilio Pozuelo Monfort ]
+  * New upstream release.
+
+  [ Andreas Henriksson ]
+  * Add debian/patches/reftest-known-fail.patch
+    - make it possible to tag individual reftests as ok to fail.
+  * debian/rules:
+    touch testsuite/reftests/style-properties-nth-child.ui.known_fail
+    - reftest shows this intermittently has a couple of pixels
+      difference on some architectures. No big deal.
+      Noone is willing to investigate and consensus is it's ok to disable.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 02 Oct 2014 01:49:16 +0200
+
+gtk+3.0 (3.14.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh patches.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 23 Sep 2014 22:25:42 +0200
+
+gtk+3.0 (3.13.9-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Fri, 19 Sep 2014 22:25:39 +0200
+
+gtk+3.0 (3.13.9-1) experimental; urgency=medium
+
+  [ Andreas Henriksson ]
+  * libgtk-3-common: Depend on adwaita-icon-theme (>= ${gnome:Version})
+    - gtk+ should guarantee we have atleast one sane icon theme available.
+  * debian/rules: Include gnome-version.mk to generate ${gnome:Version}
+
+  [ Emilio Pozuelo Monfort ]
+  * New upstream development release.
+  * debian/control.in:
+    + Bump libpango1.0-dev minimum (build-)dependency.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 19 Sep 2014 17:37:42 +0200
+
+gtk+3.0 (3.13.8-1) experimental; urgency=medium
+
+  [ Andreas Henriksson ]
+  * New upstream development release (3.13.7)
+  * Update build-dependencies according to configure.ac
+    - bump libglib2.0-dev to (>= 2.41.2)
+  * Update libgtk-3.0-dev dependency on libglib2.0-dev to (>= 2.41.2)
+  * Massage debian/patches/018_gdkenumtypes.c_location.patch to apply again
+  * Drop backported/merged patches now in released version:
+    - debian/patches/072_Avoid-pkg-config-atleast-version.patch
+  * Have quilt refresh remaining patches.
+  * Bump gobject-introspection build-dependency to (>= 1.41.3)
+    - this one supports new "nullable" annotation.
+  * Build-depend on adwaita-icon-theme instead of gnome-icon-theme-symbolic
+  * Update debian/libgtk-3-0.symbols with many additions
+  * New upstream development release (3.13.8)
+  * Update build-dependencies according to configure.ac changes:
+    - Bump libgdk-pixbuf2.0-dev to (>= 2.30.0)
+    - Bump libwayland-dev to (>= 1.5.91)
+  * debian/patches/032_mips_treeview_row_separator_height.patch:
+    - massage the patch into applying again.
+  * Update debian/libgtk-3-0.symbols
+    - 4 dropped gdk_wayland_*_libgtk_only symbols, should be unused.
+    - 3 new wayland related symbols
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Fri, 05 Sep 2014 22:50:11 +0200
+
+gtk+3.0 (3.12.2-3) unstable; urgency=medium
+
+  * Team upload
+  * debian/missing-sources/zlib.js-0.1.6: add missing source code for
+    gdk/broadway/rawinflate.min.js (Closes: #753968)
+    - some files in zlib.js upstream had missing source code themselves
+      (closure-compiler.jar) or are not needed here, and have been removed
+      to save space; see debian/missing-sources/README for details
+    - make debian/missing-sources/rawinflate.js a symlink into zlib.js-0.1.6
+      to reassure lintian that source is present
+  * d/p/073-Use-AC_USE_SYSTEM_EXTENSIONS-to-get-_GNU_SOURCE-_XOP.patch:
+    define _GNU_SOURCE on non-Linux to fix "assignment makes pointer from
+    integer without a cast" found by build-log scanning on kFreeBSD
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 17 Aug 2014 15:26:50 +0100
+
+gtk+3.0 (3.12.2-2) unstable; urgency=medium
+
+  * Team upload
+
+  [ Dmitry Shachnev ]
+  * Autopkgtests fixes: add missing xauth dependency, and stop using
+    deprecated GtkStock item.
+
+  [ Simon McVittie ]
+  * debian/patches/072_Avoid-pkg-config-atleast-version.patch:
+    stop AM_PATH_GTK_3_0([3], [], [], [gthread]) trying to require
+    gthread-2.0 >= 3, which doesn't exist (Closes: #756476)
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 10 Aug 2014 17:26:57 +0100
+
+gtk+3.0 (3.12.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Fri, 16 May 2014 12:12:48 +0200
+
+gtk+3.0 (3.12.1-1) unstable; urgency=medium
 
   * New upstream release
 
- -- Mahyuddin Idram Ahmad <dotovr@di.blankon.in>  Wed, 26 Mar 2014 22:30:19 +0700
+ -- Sjoerd Simons <sjoerd@debian.org>  Sat, 26 Apr 2014 16:44:41 +0200
+
+gtk+3.0 (3.12.0-4) unstable; urgency=medium
+
+  * Build-depend on gnome-icon-theme-symbolic and make test suite errors
+    fatal again.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Thu, 03 Apr 2014 19:45:56 +0200
+
+gtk+3.0 (3.12.0-3) unstable; urgency=medium
+
+  * debian/control.in:
+    + Loosen the dependencies on libgtk-3-common from = ${source:Version}
+      to >= ${source:Version} to make libgtk-3-bin and libgtk-3-0 installable
+      when a new source version is uploaded.
+    + Don't build depend on gnome-icon-theme-symbolic as that pulls
+      gnome-icon-theme which in turns pulls libgtk-3-bin, which isn't
+      installable at the moment.
+  * debian/rules:
+    + Temporarily make the test suite non-fatal as gnome-icon-theme-symbolic
+      is needed for some tests.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 02 Apr 2014 19:11:32 +0200
+
+gtk+3.0 (3.12.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 02 Apr 2014 16:10:12 +0200
 
 gtk+3.0 (3.12.0-1) experimental; urgency=medium
 
