@@ -1,20 +1,91 @@
-gtk+3.0 (3.16.3-2blankon3) tambora; urgency=medium
+gtk+3.0 (3.18.0-1blankon1) tambora; urgency=medium
 
-  * Add script to remove /usr/share/man/man8/update-icon-caches.gtk2.8.gz 
+  * New upstream release
+  * Merge with Debian Experimental
 
- -- Mahyuddin <yudi.al@gmail.com>  Sun, 31 May 2015 21:20:47 +0700
+ -- mhy <dotovr@mhy>  Sun, 27 Sep 2015 13:02:00 +0700
 
-gtk+3.0 (3.16.3-2blankon2) tambora; urgency=medium
+gtk+3.0 (3.18.0-1) experimental; urgency=medium
 
-  * Add script to remove /usr/sbin/update-icon-caches.gtk2 
+  * Drop debian/patches/061_multiarch_module_fallback.patch
+    - now obsolete since all packages has been fixed to install
+      in multiarch directories.
+  * Drop patches which are unused and has been for a very long time:
+    - debian/patches/030_tests_skip_filechooser.patch
+    - debian/patches/042_treeview_single-focus.patch
+    - debian/patches/043_notebook_scroll.patch
+  * New upstream release.
+  * Drop debian/patches/git_test-simplify-use-bash.patch
+    - now included in upstream release.
 
- -- Mahyuddin <yudi.al@gmail.com>  Sun, 31 May 2015 20:01:49 +0700
+ -- Andreas Henriksson <andreas@fatal.se>  Wed, 23 Sep 2015 17:07:59 +0200
 
-gtk+3.0 (3.16.3-2blankon1) tambora; urgency=medium
+gtk+3.0 (3.17.9-2) experimental; urgency=medium
 
-  * Merge with Debian Experimental 
+  * Add debian/patches/git_test-simplify-use-bash.patch from upstream
 
- -- Mahyuddin <yudi.al@gmail.com>  Sun, 31 May 2015 11:55:43 +0700
+ -- Andreas Henriksson <andreas@fatal.se>  Sun, 20 Sep 2015 19:46:36 +0200
+
+gtk+3.0 (3.17.9-1) experimental; urgency=medium
+
+  [ Simon McVittie ]
+  * d/p/073-Use-AC_USE_SYSTEM_EXTENSIONS-to-get-_GNU_SOURCE-_XOP.patch:
+    remove, applied upstream in 3.13 and no longer listed in series
+
+  [ Andreas Henriksson ]
+  * Add Breaks against gtk3-engines-oxygen << 1.4.1-3 (Closes: #797797)
+  * New upstream development release.
+  * Update (build-)dependencies according to configure.ac changes:
+    - bump pango to >= 1.37.3
+  * Bump glib build-dep to >= 2.45.8
+    - g_param_spec_get_name_quark is needed.
+  * Ship new gtk-builder-tool in libgtk-3-bin package.
+  * Update debian/libgtk-3-0.symbols with many new additions.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Thu, 17 Sep 2015 13:12:35 +0200
+
+gtk+3.0 (3.16.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh patches.
+  * Drop obsolete Breaks from pre-wheezy.
+  * Remove debian/libgtk-3-common.preinst.in, this file is a leftover from
+    gtk+2.0 and not necessary anymore.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 22 Jul 2015 21:29:11 +0200
+
+gtk+3.0 (3.16.5-1) unstable; urgency=medium
+
+  * New upstream bugfix release 3.16.5
+
+ -- Iain Lane <laney@debian.org>  Wed, 08 Jul 2015 16:20:40 +0100
+
+gtk+3.0 (3.16.4-2) unstable; urgency=medium
+
+  * Merge changes from 3.14.13-1.
+  * debian/README.Debian:
+    + Removed, that's for gtk+2.0. Closes: #622913.
+  * debian/control.in:
+    + Drop versioned dependency on pkg-config. The version is satisfied
+      in oldstable and that helps other packages that provide pkg-config.
+      Closes: #734481.
+  * Upload to unstable.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 14 Jun 2015 13:30:06 +0200
+
+gtk+3.0 (3.16.4-1) experimental; urgency=medium
+
+  [ Iain Lane ]
+  * build with --fail-missing when doing an indep build
+  * Install some utilities and missing icons, desktop files and manpages into
+    gtk-3-examples (for want of a better package).
+  * clean up reftest known_fail files in clean target which we create in
+    pre-build
+
+  [ Emilio Pozuelo Monfort ]
+  * New upstream release.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 12 Jun 2015 00:06:44 +0200
 
 gtk+3.0 (3.16.3-2) experimental; urgency=medium
 
@@ -45,6 +116,12 @@ gtk+3.0 (3.16.3-1) experimental; urgency=medium
     + Dropped, included upstream.
 
  -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 22 May 2015 18:23:50 +0200
+
+gtk+3.0 (3.14.13-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Wed, 10 Jun 2015 18:19:44 +0200
 
 gtk+3.0 (3.14.5-1) unstable; urgency=medium
 
